@@ -1,0 +1,21 @@
+#!/bin/bash -ex
+#
+# S2I assemble script for the 'book-custom-s2i' image.
+# The 'assemble' script currently only supports binary builds.
+#
+# For more information refer to the documentation:
+#    https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+if [ "$1" = "-h" ]; then
+    # If the 'book-custom-s2i' assemble script is executed with '-h' flag, print the usage.
+    exec /usr/local/sti/usage
+fi
+
+# Binary deployment is a single war
+if [ $(ls /opt/app/src/*.jar | wc -l) -eq 1 ]; then
+  mv /opt/app/src/*.jar /opt/app/openshift-app.jar
+else
+  echo "Jar not found in /opt/app/src/
+  exit 1
+fi
