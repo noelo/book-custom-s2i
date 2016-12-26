@@ -8,7 +8,7 @@ LABEL io.k8s.description="Platform for building and running Java8 applications" 
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,java8" \
       io.openshift.s2i.destination="/opt/app" \
-      io.openshift.scripts-url="/opt/app/scripts/"
+      io.openshift.scripts-url=image:///opt/app/scripts/
 
 RUN adduser --system -u 10001 javauser
 
