@@ -20,4 +20,4 @@ USER 10001
 
 EXPOSE 8080
 
-ENTRYPOINT ["/usr/local/sti/usage"]
+CMD ["/usr/local/s2i/usage"]
