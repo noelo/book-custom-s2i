@@ -20,4 +20,4 @@ USER 10001
 
 EXPOSE 8080
 
-ENTRYPOINT ["/opt/app/scripts/usage"]
+ENTRYPOINT ["/usr/local/sti/usage"]
